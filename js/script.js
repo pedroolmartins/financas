@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'text/plain;charset=utf-8'
             }
         })
             .then(response => response.text())
