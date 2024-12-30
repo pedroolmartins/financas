@@ -1,6 +1,6 @@
 
 const proxy = 'https://proxy.corsfix.com/?'
-const appUrl = proxy + 'https://script.google.com/macros/s/AKfycbzLdNxdyQqU2bazO9Ls9pC0IaiMzxNFJDcpmsCf8YoZnx4bmoTJroZ-kNx33plVIfcXxA/exec'
+const appUrl = 'https://script.google.com/macros/s/AKfycbzLdNxdyQqU2bazO9Ls9pC0IaiMzxNFJDcpmsCf8YoZnx4bmoTJroZ-kNx33plVIfcXxA/exec'
 
 document.addEventListener('DOMContentLoaded', () => {
     var button = document.getElementById('submit_form')
