@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         fetch(appUrl, {
+            redirect: "follow",
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
