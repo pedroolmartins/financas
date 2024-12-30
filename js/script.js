@@ -15,9 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch(appUrl, {
             method: 'POST',
             body: JSON.stringify(data),
+            // cache: "no-cache",
             headers: {
-                'Content-Type': 'text/plain;charset=utf-8'
-            }
+                "Content-Type": "application/json",
+            },
+            redirect: "follow",
+            mode: 'no-cors'
         })
             .then(response => response.text())
             .then((data) => {
