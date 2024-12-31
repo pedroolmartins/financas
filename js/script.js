@@ -16,11 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
             method: 'POST',
             body: JSON.stringify(data),
             // cache: "no-cache",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            redirect: "follow",
-            mode: 'no-cors'
+            // headers: {
+            //     "Content-Type": "application/json",
+            // },
+            // redirect: "follow",
+            // mode: 'no-cors'
         })
             .then(response => response.text())
             .then((data) => {
