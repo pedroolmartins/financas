@@ -1,20 +1,25 @@
 
 const proxy = 'https://proxy.corsfix.com/?'
-const appUrl = 'https://script.google.com/macros/s/AKfycbzLdNxdyQqU2bazO9Ls9pC0IaiMzxNFJDcpmsCf8YoZnx4bmoTJroZ-kNx33plVIfcXxA/exec'
+const appUrl = 'https://script.google.com/macros/s/AKfycbzbJrakblzQcFiHWRiNMvIWgOjPUSNBLnfVSVNmCBZu5Y98JAJrz007XfaNi1hUGVpyrw/exec'
 
 document.addEventListener('DOMContentLoaded', () => {
     var button = document.getElementById('submit_form')
 
-    button.addEventListener('click', () => {
-        const data = {
-            nome: 'João Silva',
-            email: 'joao@example.com',
-            mensagem: 'Olá, isso é um teste!'
-        };
+    const form = document.getElementById('dados')
+    button.addEventListener('click', async (event) => {
+        event.preventDefault()
+        button.classList.add('is-loading')
+        const data = new FormData(form)
+        // const data = {
+        //     nome: 'João Silva',
+        //     email: 'joao@example.com',
+        //     mensagem: 'Olá, isso é um teste!'
+        // };
 
-        fetch(appUrl, {
+        console.log( JSON.stringify(Object.fromEntries(data.entries())))
+        await fetch(appUrl, {
             method: 'POST',
-            body: JSON.stringify(data),
+            body: JSON.stringify(Object.fromEntries(data.entries())),
             // cache: "no-cache",
             // headers: {
             //     "Content-Type": "application/json",
@@ -42,5 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log('Resposta do servidor:', error)
                 console.error('Erro:', error)
             })
+
+        button.classList.remove('is-loading')
     })
 })

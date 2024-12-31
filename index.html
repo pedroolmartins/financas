@@ -5,17 +5,27 @@
     <meta charset="UTF-8" />
     <title>Controle de Finanças</title>
     <script src="./js/script.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
 </head>
 
 <body>
-    <div>
-        <div>
-            <label>Nome</label>
-            <input type="text" name="name" placeholder="Insira o nome">
-        </div>
-        <button id="submit_form">Enviar</button>
+    <div class="container is-max-tablet">
+        <div class="flex box">
+            <form id="dados">
+                <div class="flex">
+                    <label>Despesa</label>
+                    <input class="input" type="text" name="despesa" placeholder="Insira o nome">
+                </div>
 
-        <div id="resultado">no cors</div>
+                <div class="flex">
+                    <label>Valor</label>
+                    <input class="input" type="text" name="valor" placeholder="R$">
+                </div>
+            </form>
+
+            <button class="button mt-3" id="submit_form">Enviar</button>
+            <div id="resultado"></div>
+        </div>
     </div>
 </body>
 
