@@ -11,26 +11,26 @@
 <body>
     <div class="hero is-fullheight">
         <div class="hero-body level level-item">
-            <div class="box container">
+            <div class="container is-size-2">
                 <form class="is-flex is-flex-direction-column columns" id="dados">
-                    <div class="flex column">
+                    <div class="column">
                         <label>Despesa</label>
-                        <input class="input" type="text" name="despesa" id="despesa" placeholder="">
+                        <input class="input is-large" type="text" name="despesa" id="despesa" placeholder="">
                     </div>
 
-                    <div class="flex column">
+                    <div class="column">
                         <label>Valor</label>
-                        <input class="input" type="text" name="valor" id="valor" placeholder="R$">
+                        <input class="input is-large" type="text" name="valor" id="valor" placeholder="R$">
                     </div>
 
-                    <div class="flex column">
+                    <div class="column">
                         <label>Data PG</label>
-                        <input class="input" type="date" name="data_pg" id="data_pg" placeholder="">
+                        <input class="input is-large" type="date" name="data_pg" id="data_pg" placeholder="">
                     </div>
 
-                    <div class="flex column">
+                    <div class="column">
                         <div>Categoria</div>
-                        <div class="select is-fullwidth">
+                        <div class="select is-large is-fullwidth">
                             <select name="categoria" id="categoria">
                                 <option hidden></option>
                                 <option>With options</option>
@@ -38,9 +38,14 @@
                             </select>
                         </div>
                     </div>
+
+                    <div class="column">
+                        <div>Observação</div>
+                        <textarea class="textarea is-large" placeholder="" name="obs" id="obs"></textarea>
+                    </div>
                 </form>
 
-                <button class="button mt-3" id="submit_form">Enviar</button>
+                <button class="button mt-3 is-size-1 is-large is-fullwidth" id="submit_form">Enviar</button>
                 <div id="resultado"></div>
             </div>
         </div>
