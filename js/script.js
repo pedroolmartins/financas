@@ -112,7 +112,7 @@ const showAlert = (alert, message) => {
         setTimeout(() => {
             divResponse.classList.add('is-hidden')
             target.classList.add('is-hidden')
-        }, 10000)
+        }, 5000)
     }
 
     divResponse.innerHTML = (message)

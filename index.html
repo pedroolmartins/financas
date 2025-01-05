@@ -24,7 +24,7 @@
 
                     <div class="column">
                         <label>Valor</label>
-                        <input class="input is-large" type="tel" name="valor" id="valor" placeholder="R$">
+                        <input class="input is-large" type="tel" name="valor" id="valor"  pattern="[0-9.,]*" inputmode="decimal" placeholder="R$">
                     </div>
 
                     <div class="column">
@@ -47,9 +47,7 @@
                     </div>
                 </form>
 
-                <button class="button mt-3 is-size-1 is-large is-fullwidth is-primary" id="submit_form">Enviar</button>
-
-                <div class="is-flex columns mt-6">
+                <div class="is-flex columns">
                     <div class="is-flex is-justify-content-center is-align-items-center  column">
                         <div class="is-hidden" id="form_alert_missing_fields">
                             <div class="icon-text is-flex is-justify-content-center">
@@ -75,6 +73,8 @@
                         <div class="ml-5" id="response"></div>
                     </div>
                 </div>
+
+                <button class="button mt-3 is-size-1 is-large is-fullwidth is-primary" id="submit_form">Enviar</button>
             </div>
         </div>
     </div>
