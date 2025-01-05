@@ -6,6 +6,9 @@
     <title>Controle de Finanças</title>
     <script src="./js/script.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -13,6 +16,7 @@
         <div class="hero-body level level-item">
             <div class="container is-size-2">
                 <form class="is-flex is-flex-direction-column columns" id="dados">
+                    <input class="is-hidden" name="tipo" id="tipo" value="variavel">
                     <div class="column">
                         <label>Despesa</label>
                         <input class="input is-large" type="text" name="despesa" id="despesa" placeholder="">
@@ -20,11 +24,11 @@
 
                     <div class="column">
                         <label>Valor</label>
-                        <input class="input is-large" type="text" name="valor" id="valor" placeholder="R$">
+                        <input class="input is-large" type="tel" name="valor" id="valor" placeholder="R$">
                     </div>
 
                     <div class="column">
-                        <label>Data PG</label>
+                        <label>Data</label>
                         <input class="input is-large" type="date" name="data_pg" id="data_pg" placeholder="">
                     </div>
 
@@ -33,8 +37,6 @@
                         <div class="select is-large is-fullwidth">
                             <select name="categoria" id="categoria">
                                 <option hidden></option>
-                                <option>With options</option>
-                                <option>With options</option>
                             </select>
                         </div>
                     </div>
@@ -45,8 +47,34 @@
                     </div>
                 </form>
 
-                <button class="button mt-3 is-size-1 is-large is-fullwidth" id="submit_form">Enviar</button>
-                <div id="resultado"></div>
+                <button class="button mt-3 is-size-1 is-large is-fullwidth is-primary" id="submit_form">Enviar</button>
+
+                <div class="is-flex columns mt-6">
+                    <div class="is-flex is-justify-content-center is-align-items-center  column">
+                        <div class="is-hidden" id="form_alert_missing_fields">
+                            <div class="icon-text is-flex is-justify-content-center">
+                                <span class="icon has-text-warning">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="is-hidden" id="form_alert_success">
+                            <div class="icon-text is-flex is-justify-content-center">
+                                <span class="icon has-text-success">
+                                    <i class="fas fa-check-square"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="is-hidden" id="form_alert_error">
+                            <div class="icon-text is-flex is-justify-content-center">
+                                <span class="icon has-text-danger">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="ml-5" id="response"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
