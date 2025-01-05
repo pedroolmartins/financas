@@ -49,14 +49,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // submit form
     button.addEventListener('click', async (event) => {
         event.preventDefault()
-        button.classList.add('is-loading')
-        hideAlerts()
         const data = new FormData(form)
         const obj = Object.fromEntries(data.entries())
         const requiredFields = ['despesa', 'valor', 'data_pg', 'categoria', 'tipo']
         const missingFields = []
-        
-        console.log(obj)
+        hideAlerts()
+
+        // console.log(obj)
         Object.keys(obj).forEach(key => {
             if (!obj[key].length && requiredFields.includes(key)) {
                 missingFields.push(key)
@@ -75,7 +74,14 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             showAlert('missing_fields', 'Preencha todos os campos obrigatórios.')
             return
+        } else {
+            //nenhum campo obrigatório vazio, confirma dados inseridos
+            if (!confirm('Confirme os dados inseridos:\nDespesa: ' + obj.despesa + '\nValor: ' + obj.valor + '\nData: ' + formatDate(obj.data_pg) + '\nCategoria: ' + obj.categoria + '\nTipo: ' + obj.tipo + '\nObservações: ' + obj.obs)) {
+                return
+            }
         }
+
+        button.classList.add('is-loading')
 
         await fetch(appUrl, {
             method: 'POST',
@@ -160,4 +166,9 @@ const categoryOptions = () => {
         optionElement.textContent = optionText
         selectElement.appendChild(optionElement)
     });
+}
+
+const formatDate = (dateString) => {
+    const [year, month, day] = dateString.split('-')
+    return `${day}/${month}/${year}`
 }

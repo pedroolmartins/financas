@@ -16,15 +16,25 @@
         <div class="hero-body level level-item">
             <div class="container is-size-2">
                 <form class="is-flex is-flex-direction-column columns" id="dados">
-                    <input class="is-hidden" name="tipo" id="tipo" value="variavel">
                     <div class="column">
                         <label>Despesa</label>
                         <input class="input is-large" type="text" name="despesa" id="despesa" placeholder="">
                     </div>
 
                     <div class="column">
+                        <label>Tipo</label>
+                        <div class="select is-large is-fullwidth">
+                            <select name="tipo" id="tipo">
+                                <option value="recorrente">Recorrente</option>
+                                <option value="variavel" selected>Variável</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="column">
                         <label>Valor</label>
-                        <input class="input is-large" type="tel" name="valor" id="valor"  pattern="[0-9.,]*" inputmode="decimal" placeholder="R$">
+                        <input class="input is-large" type="tel" name="valor" id="valor" pattern="[0-9.,]*"
+                            inputmode="decimal" placeholder="R$">
                     </div>
 
                     <div class="column">
@@ -33,7 +43,7 @@
                     </div>
 
                     <div class="column">
-                        <div>Categoria</div>
+                        <label>Categoria</label>
                         <div class="select is-large is-fullwidth">
                             <select name="categoria" id="categoria">
                                 <option hidden></option>
