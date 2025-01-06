@@ -2,15 +2,16 @@ self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open('meu-app-cache').then((cache) => {
             return cache.addAll([
-                config.APP_URL + 'index.html',
-                config.APP_URL + 'style/styles.css',
-                config.APP_URL + 'js/scripts.js',
-                config.APP_URL + 'icons/icon-120x120.png',
-                config.APP_URL + 'icons/icon-152x152.png',
-                config.APP_URL + 'icons/icon-167x167.png',
-                config.APP_URL + 'icons/icon-180x180.png',
-                config.APP_URL + 'icons/icon-192x192.png',
-                config.APP_URL + 'icons/icon-512x512.png'
+                'financas/',
+                'financas/index.html',
+                'financas/style/styles.css',
+                'financas/js/scripts.js',
+                'financas/icons/icon-120x120.png',
+                'financas/icons/icon-152x152.png',
+                'financas/icons/icon-167x167.png',
+                'financas/icons/icon-180x180.png',
+                'financas/icons/icon-192x192.png',
+                'financas/icons/icon-512x512.png'
             ]);
         })
     );
