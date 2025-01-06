@@ -3,15 +3,15 @@ self.addEventListener('install', (event) => {
         caches.open('meu-app-cache').then((cache) => {
             return cache.addAll([
                 '/',
-                '/index.html',
-                '/style/styles.css',
-                '/js/scripts.js',
-                '/icons/icon-120x120.png',
-                '/icons/icon-152x152.png',
-                '/icons/icon-167x167.png',
-                '/icons/icon-180x180.png',
-                '/icons/icon-192x192.png',
-                '/icons/icon-512x512.png'
+                'index.html',
+                'style/styles.css',
+                'js/scripts.js',
+                'icons/icon-120x120.png',
+                'icons/icon-152x152.png',
+                'icons/icon-167x167.png',
+                'icons/icon-180x180.png',
+                'icons/icon-192x192.png',
+                'icons/icon-512x512.png'
             ]);
         })
     );
