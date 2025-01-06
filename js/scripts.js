@@ -1,5 +1,11 @@
+const config = {
+    APP_URL: window.location.origin == 'https://pedroolmartins.github.io' ? 'https://pedroolmartins.github.io/financas/' : window.location.origin + '/',
+};
+
+
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js')
+    navigator.serviceWorker.register(config.APP_URL + 'service-worker.js')
+
         .then(() => console.log('Service Worker registrado com sucesso!'))
         .catch((err) => console.log('Erro ao registrar Service Worker:', err));
 }
@@ -9,7 +15,6 @@ const appUrl = 'https://script.google.com/macros/s/AKfycbzLdNxdyQqU2bazO9Ls9pC0I
 const alerts = ['missing_fields', 'success', 'error']
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log(window.location.origin)
     const button = document.getElementById('submit_form')
     const form = document.getElementById('dados')
     const inputValor = document.getElementById("valor")
