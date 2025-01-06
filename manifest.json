@@ -3,26 +3,6 @@
     "name": "Controle de Finanças Pessoais",
     "icons": [
         {
-            "src": "/icons/icon-120x120.png",
-            "type": "image/png",
-            "sizes": "120x120"
-        },
-        {
-            "src": "/icons/icon-152x152.png",
-            "type": "image/png",
-            "sizes": "152x152"
-        },
-        {
-            "src": "/icons/icon-167x167.png",
-            "type": "image/png",
-            "sizes": "167x167"
-        },
-        {
-            "src": "/icons/icon-180x180.png",
-            "type": "image/png",
-            "sizes": "180x180"
-        },
-        {
             "src": "/icons/icon-192x192.png",
             "type": "image/png",
             "sizes": "192x192"
