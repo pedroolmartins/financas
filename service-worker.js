@@ -2,7 +2,6 @@ self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open('meu-app-cache').then((cache) => {
             return cache.addAll([
-                '/',
                 'index.html',
                 'style/styles.css',
                 'js/scripts.js',
