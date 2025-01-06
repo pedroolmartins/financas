@@ -9,6 +9,7 @@ const appUrl = 'https://script.google.com/macros/s/AKfycbzLdNxdyQqU2bazO9Ls9pC0I
 const alerts = ['missing_fields', 'success', 'error']
 
 document.addEventListener('DOMContentLoaded', () => {
+    console.log(window.location.origin)
     const button = document.getElementById('submit_form')
     const form = document.getElementById('dados')
     const inputValor = document.getElementById("valor")
